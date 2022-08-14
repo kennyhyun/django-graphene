@@ -34,7 +34,15 @@ docker compose up -d
 
 Books app is a sample model for the graphql
 
+## Features
 
+### Admin pages
+
+`/admin/` will provide the 
+
+### graphiql
+
+API documentation with html client (playground)
 
 ## Other Commands
 
