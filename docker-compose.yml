@@ -23,6 +23,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - COREHOST=${HOST:-core.yeoyou.net}
+      - CORSHOST=${CORSHOST:-yeoyou.net}
     depends_on:
       - db
     labels:
