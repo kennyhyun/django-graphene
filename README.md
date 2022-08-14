@@ -63,7 +63,7 @@ Sample queries
 - Run the containers
   - `docker compose up -d`
 - Stop the containers
-  - `docker compose down -v`
+  - `docker compose down`
 - Building the docker image
   - `docker compose build`
 - Check for the logs
