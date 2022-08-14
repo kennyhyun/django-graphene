@@ -47,6 +47,17 @@ API documentation with html client (playground)
 
 `/graphql`
 
+Sample queries
+
+```graphql
+{
+  allBooks{
+    id
+    title
+  }
+}
+```
+
 ## Other Commands
 
 - Run the containers
