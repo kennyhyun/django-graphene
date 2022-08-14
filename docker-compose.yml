@@ -1,0 +1,47 @@
+version: "3.9"
+   
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    restart: unless-stopped
+    networks:
+      - proxy
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:${PORT:-8000}
+    volumes:
+      - .:/code
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - COREHOST=${HOST:-core.yeoyou.net}
+    depends_on:
+      - db
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.core.entrypoints=http"
+      - "traefik.http.routers.core.rule=Host(`${HOST:-core.yeoyou.net}`)"
+      - "traefik.http.routers.core.middlewares=traefik-https-redirect"
+      - "traefik.http.routers.core-secure.entrypoints=https"
+      - "traefik.http.routers.core-secure.rule=Host(`${HOST:-core.yeoyou.net}`)"
+      - "traefik.http.routers.core-secure.tls.certresolver=http"
+      - "traefik.http.routers.core-secure.service=core"
+      - "traefik.http.services.core.loadbalancer.server.port=${PORT:-8000}"
+      - "traefik.docker.network=proxy"
+    restart: unless-stopped
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
+    name: "${NETWORK_NAME:-proxy}"
