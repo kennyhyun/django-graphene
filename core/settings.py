@@ -171,9 +171,19 @@ GRAPHQL_JWT = {
     'JWT_LONG_RUNNING_REFRESH_TOKEN': True,
 }
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 CORSHOST = os.environ.get('CORSHOST') or COREHOST
+
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+if EMAIL_HOST:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'# default
+    EMAIL_PORT = os.environ.get('EMAIL_PORT')
+    EMAIL_USE_TLS = True
+    EMAIL_FROM = os.environ.get('EMAIL_FROM') or 'admin@' + CORSHOST
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r'^https://\w+\.' + CORSHOST.replace('.', r'\.') + r'$',
 ]
