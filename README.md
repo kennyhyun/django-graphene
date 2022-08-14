@@ -1,4 +1,5 @@
-# django-graphene
+# Django Graphene Seed
+
 a seed project for Django-graphene with authentication
 
 This is a sample Graphql API backend with authentication and authorization
@@ -57,6 +58,16 @@ Sample queries
   }
 }
 ```
+
+## Utilising
+
+### To allow CORS
+
+Specify `CORSHOST=your.domain.me` in the `.env` file
+
+### To allow same site cookie
+
+TBC
 
 ## Other Commands
 
