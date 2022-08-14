@@ -64,16 +64,19 @@ API documentation with html client (playground)
 ### Login
 
 ```graphql
-{
+mutation{
+  tokenAuth(email:"kenny+guest2@yeoyou.net", password: "dihk1234") {
+    token
+    success
+    errors
+    user {
+      username
+    }
+    refreshToken
+  }
 }
 ```
 
-### Verify
-
-```graphql
-{
-}
-```
 
 ### Refresh token
 
@@ -85,7 +88,13 @@ API documentation with html client (playground)
 ### Signup
 
 ```graphql
-{
+mutation{
+  register(email:"user@yeoyou.net", password1: "userpa$$w0rd", password2: "userpa$$w0rd", username: "user") {
+    success
+    errors
+    token
+    refreshToken
+  }
 }
 ```
 
@@ -93,11 +102,15 @@ API documentation with html client (playground)
 ### Verify email
 
 ```graphql
-{
+mutation{
+  verifyAccount(token: "eyJ1c2VybmFtZ-find-your:token:sent_my_email") {
+    success
+    errors
+  }
 }
 ```
 
-
+** See also https://django-graphql-auth.readthedocs.io/en/latest/quickstart/#full-schema
 
 ## Utilising
 
