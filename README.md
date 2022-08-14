@@ -65,9 +65,7 @@ Sample queries
 
 By default, it will allow subdomains of `COREHOST`
 
-Specify `CORSHOST=your.domain.me` in the `.env` file
-
-This will allow `*.your.domain.me` domains
+If you specify `CORSHOST=domain.me` in the `.env` file, it will allow `*.domain.me` domains
 
 ### To allow same site cookie
 
