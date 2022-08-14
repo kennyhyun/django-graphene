@@ -63,6 +63,8 @@ Sample queries
 
 ### To allow CORS
 
+By default, it will allow subdomains of `COREHOST`
+
 Specify `CORSHOST=your.domain.me` in the `.env` file
 
 This will allow `*.your.domain.me` domains
