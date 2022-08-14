@@ -48,7 +48,9 @@ API documentation with html client (playground)
 
 `/graphql`
 
-Sample queries
+## Sample queries
+
+### List books
 
 ```graphql
 {
@@ -58,6 +60,44 @@ Sample queries
   }
 }
 ```
+
+### Login
+
+```graphql
+{
+}
+```
+
+### Verify
+
+```graphql
+{
+}
+```
+
+### Refresh token
+
+```graphql
+{
+}
+```
+
+### Signup
+
+```graphql
+{
+}
+```
+
+
+### Verify email
+
+```graphql
+{
+}
+```
+
+
 
 ## Utilising
 
