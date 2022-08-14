@@ -20,6 +20,7 @@ HOST=api.sameleserver.com
 
 
 ### DB Migration
+  - `docker compose run web python manage.py makemigration`
   - `docker compose run web python manage.py migrate`
   
 ### Creating superuser
