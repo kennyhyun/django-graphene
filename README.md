@@ -38,11 +38,13 @@ Books app is a sample model for the graphql
 
 ### Admin pages
 
-`/admin/` will provide the 
+`/admin/` will provide the Admin pages for CRUD
 
 ### graphiql
 
 API documentation with html client (playground)
+
+`/graphql`
 
 ## Other Commands
 
