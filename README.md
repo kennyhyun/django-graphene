@@ -65,6 +65,8 @@ Sample queries
 
 Specify `CORSHOST=your.domain.me` in the `.env` file
 
+This will allow `*.your.domain.me` domains
+
 ### To allow same site cookie
 
 TBC
