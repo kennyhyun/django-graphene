@@ -48,6 +48,14 @@ API documentation with html client (playground)
 
 `/graphql`
 
+### Email backend
+
+because of `EMAIL_BACKEND` setting, it's just output the email body in the stdout
+
+You can see the logs by `docker compose logs web -f`
+
+Please properlk set the email backend for sending email. https://www.sitepoint.com/django-send-email/
+
 ## Sample queries
 
 ### List books
