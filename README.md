@@ -58,8 +58,8 @@ Sample for https://mailtrap.io/ sandbox
 EMAIL_PORT=2525
 EMAIL_HOST=smtp.mailtrap.io
 EMAIL_FROM=kenny+orclarm@yeoyou.net
-EMAIL_HOST_PASSWORD=sandboxsecret
-EMAIL_HOST_USER=sandboxname
+EMAIL_HOST_PASSWORD=yoursandboxsecret
+EMAIL_HOST_USER=yoursandboxname
 ```
 
 ## Sample queries
