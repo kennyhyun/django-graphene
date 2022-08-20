@@ -75,6 +75,19 @@ EMAIL_HOST_USER=sandboxname
 }
 ```
 
+### Signup
+
+```graphql
+mutation{
+  register(email:"user@yeoyou.net", password1: "userpa$$w0rd", password2: "userpa$$w0rd", username: "user") {
+    success
+    errors
+    token
+    refreshToken
+  }
+}
+```
+
 ### Login
 
 ```graphql
@@ -90,28 +103,6 @@ mutation{
   }
 }
 ```
-
-
-### Refresh token
-
-```graphql
-{
-}
-```
-
-### Signup
-
-```graphql
-mutation{
-  register(email:"user@yeoyou.net", password1: "userpa$$w0rd", password2: "userpa$$w0rd", username: "user") {
-    success
-    errors
-    token
-    refreshToken
-  }
-}
-```
-
 
 ### Verify email
 
