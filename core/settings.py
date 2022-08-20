@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+from email.utils import parseaddr
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,10 +25,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-hh&-a-z3qj*h67uk^-6ai!q(or57ep*5(^bq$u+%#0^te@*j=x')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get('DEBUG'))
+DEBUG = not bool(os.environ.get('PRODUCTION')) or bool(os.environ.get('DEBUG'))
+LOGGER_EMAILS = os.environ.get('LOGGER_EMAILS')
+COREHOST = os.environ.get('COREHOST')
+if not DEBUG:
+    if bool(LOGGER_EMAILS):
+        ADMINS=[parseaddr(str) for str in LOGGER_EMAILS.split(',')]
+    else:
+        ADMINS=['admin@' + COREHOST]
 
 ALLOWED_HOSTS = [
-        os.environ.get('COREHOST'),
+        COREHOST,
 ]
 
 
@@ -165,7 +173,7 @@ GRAPHQL_JWT = {
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-CORSHOST = os.environ.get('CORSHOST') or os.environ.get('COREHOST')
+CORSHOST = os.environ.get('CORSHOST') or COREHOST
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r'^https://\w+\.' + CORSHOST.replace('.', r'\.') + r'$',
 ]
