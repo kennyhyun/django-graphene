@@ -178,7 +178,7 @@ if EMAIL_HOST:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'# default
     EMAIL_PORT = os.environ.get('EMAIL_PORT')
     EMAIL_USE_TLS = True
-    EMAIL_FROM = os.environ.get('EMAIL_FROM') or 'admin@' + CORSHOST
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_FROM') or 'admin@' + CORSHOST
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 else:
