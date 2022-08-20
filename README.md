@@ -50,12 +50,17 @@ API documentation with html client (playground)
 
 ### Email backend
 
-because of `EMAIL_BACKEND` setting, it's just output the email body in the stdout
+If you set `EMAIL_HOST` in `.env`, it will set EMAIL_BACKEND for smtp.
 
-You can see the logs by `docker compose logs web -f`
+Sample for https://mailtrap.io/ sandbox
 
-Please properly set the email backend for sending email. https://www.sitepoint.com/django-send-email/
-or set `GMAIL_APP_PASSWORD` and `GMAIL_ADDRESS`
+```
+EMAIL_PORT=2525
+EMAIL_HOST=smtp.mailtrap.io
+EMAIL_FROM=kenny+orclarm@yeoyou.net
+EMAIL_HOST_PASSWORD=sandboxsecret
+EMAIL_HOST_USER=sandboxname
+```
 
 ## Sample queries
 
