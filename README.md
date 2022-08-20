@@ -19,6 +19,11 @@ create `.env` file to set `HOST`
 HOST=api.sameleserver.com
 ```
 
+## Starting
+
+```sh
+docker compose up -d
+```
 
 ### DB Migration
   - `docker compose run web python manage.py makemigrations`
@@ -26,12 +31,7 @@ HOST=api.sameleserver.com
   
 ### Creating superuser
   - `docker compose run web python manage.py createsuperuser`
-  
-## Starting
 
-```sh
-docker compose up -d
-```
 ## Sample Books Model
 
 Books app is a sample model for the graphql
