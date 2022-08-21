@@ -10,7 +10,14 @@ This project would be useful for seeding a MVP backend
 
 ## Features
 
-Most of the feature is from Django itself. You can easily add administrative CRUD menu for the database tables.
+Most of the feature is from Django itself. Also utilise plugins for Django.
+Includes docker compose for developing locally and actual staging environment.
+
+- Adminstrative tool
+- DB migration (model to db schema migration in the command line)
+- GraphiQL graphql client for debug/test
+- Email validation for completing user registration
+- Configuratble docker-compose environment
 
 ### Django admin tool
 
@@ -159,3 +166,15 @@ TBC
 - Check for the logs
   - `docker compose logs -f web`
   - or `docker logs -f core-web-1`
+
+## Customising Django secret
+
+You can run a docker environment and generate the random secret key and put that in `.env`
+
+```
+$ docker compose run web bash
+# python3 -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())" >> .env
+# exit
+```
+
+and edit the last line of `.env` to be `SECRET_KEY='xxxxx.secret.key.at.the.last.line.yyyy'`
