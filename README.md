@@ -8,6 +8,25 @@ With Django Admin, it's useful to manage the contents.
 
 This project would be useful for seeding a MVP backend
 
+## Features
+
+Most of the feature is from Django itself. You can easily add administrative CRUD menu for the database tables.
+
+### Django admin tool
+
+![image](https://user-images.githubusercontent.com/5399854/185773322-0e6e33e9-bc39-4ebb-9b8b-961dde473d8b.png)
+
+![image](https://user-images.githubusercontent.com/5399854/185773324-aa4b5e2c-8ab1-4c33-9060-55db76e497cd.png)
+
+![image](https://user-images.githubusercontent.com/5399854/185773332-50fb196d-959c-4f65-bf0e-1584daa0b541.png)
+
+### Graphql
+
+Only for DEBUG mode
+
+![image](https://user-images.githubusercontent.com/5399854/185773337-c38b9da5-dd6f-4e32-9233-7cf72eace3fb.png)
+
+Set `DEBUG=1` to `.env` if you want to turn it off
 
 ## Initialising
 
