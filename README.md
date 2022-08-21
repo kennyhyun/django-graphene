@@ -8,6 +8,12 @@ With Django Admin, it's useful to manage the contents.
 
 This project would be useful for seeding a MVP backend
 
+## Features
+
+Most of the feature is from Django itself. You can easily add administrative CRUD menu for the database tables.
+
+### Django admin tool
+
 
 ## Initialising
 
