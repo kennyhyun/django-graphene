@@ -1,0 +1,6 @@
+{% extends "admin/base_site.html" %}
+{% load env %}
+
+{% block branding %}
+<h1 id="site-name">{% getenv 'ADMIN_SITE_TITLE' 'Django Administration' %}</h1>
+{% endblock %}

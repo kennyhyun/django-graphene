@@ -23,6 +23,7 @@ from .views import activation
 
 urlpatterns = [
     path('activate/<str:token>', activation.activate),
+    path('accounts/login/', auth_views.LoginView.as_view(template_name='admin/login.html')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('graphql/', csrf_exempt(GraphQLView.as_view(graphiql=True))),
