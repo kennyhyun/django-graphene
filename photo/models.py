@@ -1,10 +1,9 @@
 from django.db import models
-from user.models import ExtendedUser as User
-
+from django.contrib.auth import get_user_model
 
 class PhotoItem(models.Model):
     id = models.AutoField(primary_key=True)
-    owner = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, default=None)
     time_created = models.DateTimeField(auto_now_add=True)
     time_updated = models.DateTimeField(auto_now=True)
 
